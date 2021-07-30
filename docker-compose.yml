@@ -3,7 +3,7 @@ services:
   api:
     build:
       dockerfile: Dockerfile
-      context: AcmeFileUpload.API/.
+      context: AcmeFileUpload-API/.
     environment:
       ASPNETCORE_ENVIRONMENT: "Production"
     ports:
@@ -13,6 +13,6 @@ services:
   web:
     build:
       dockerfile: Dockerfile
-      context: AcmeFileUpload.Web/.
+      context: AcmeFileUpload-Web/.
     ports:
       - 5000:80
