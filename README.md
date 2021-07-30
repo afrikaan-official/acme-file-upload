@@ -37,6 +37,8 @@ services:
       ASPNETCORE_ENVIRONMENT: "Production"
     ports:
       - 5001:5001
+    volumes:
+    - "./uploads:/app/uploads:rw"
   web:
     build:
       dockerfile: Dockerfile
@@ -77,4 +79,6 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 175d434cce7c   acmefileupload_web   "dotnet AcmeFileUplo…"   33 seconds ago   Up 26 seconds   0.0.0.0:5000->5000/tcp, :::5000->5000/tcp   acmefileupload_web_1
 ```
 
-After the application starts, navigate to `http://localhost:5000` in your web browser.
+After the application starts, navigate to `http://localhost:5000` in your web browser to see web project and you have to see that it will create a folder called `uploads` in your file system.
+
+That's where the files persisted. It is configured in `docker-compose.yml` via docker volumes.
