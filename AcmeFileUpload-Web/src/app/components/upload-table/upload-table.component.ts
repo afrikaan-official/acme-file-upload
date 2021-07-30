@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 
 @Component({
   selector: 'app-upload-table',
@@ -6,28 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./upload-table.component.css']
 })
 export class UploadTableComponent implements OnInit {
-  items: Array<any> = [
-    {
-      title: 'ornek.jpg',
-      size: '512 MB',
-      date: true
-    },
-    {
-      title: 'ornek2.jpg',
-      size: '256 MB',
-      date: false
-    },
-    {
-      title: 'ornek3.jpg',
-      size: '2048 MB',
-      date: true
-    },
-    {
-      title: 'ornek4.jpg',
-      size: '1024 MB',
-      date: false
-    }
-  ]
+  @Input() tableItems: Array<any> = []
+
   constructor() {}
 
   ngOnInit(): void {

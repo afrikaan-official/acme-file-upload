@@ -34,7 +34,7 @@ namespace AcmeFileUpload_API.Bus
                     await formFile.CopyToAsync(stream);
                 }
 
-                return new Tuple<string, long, bool,string>(formFile.Name, formFile.Length, true,DateTime.Now.ToLongDateString());
+                return new Tuple<string, long, bool,string>(formFile.Name, formFile.Length, true,DateTime.Now.ToString("u"));
             }
             
             return new Tuple<string, long, bool,string>(string.Empty, 0, false,string.Empty);

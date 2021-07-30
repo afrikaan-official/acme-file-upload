@@ -10,13 +10,11 @@ export class FileUploadServiceService {
 
   constructor(private http:HttpClient) { }
 
-  upload(file:File):Observable<any> {
-
-    // Create form data
+  upload(file:File):Observable<Object> {
     const formData = new FormData();
   
     formData.append(file.name, file, file.name);
 
-    return this.http.post(environment.apiUrl, formData)
+    return this.http.post(environment.apiUrl, formData);
   }
 }

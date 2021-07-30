@@ -1,25 +1,26 @@
 <div class="upload-tables">
   <div class="table-row title">
     <div class="table-column">
-      Title
+      FileName
     </div>
     <div class="table-column">
-      Title
+      FileSize
     </div>
     <div class="table-column">
-      Title
+      DateTime
     </div>
   </div>
 
-  <div class="table-row" *ngFor="let item of items">
+  <div class="table-row" *ngFor="let item of tableItems">
     <div class="table-column">
-      {{item.title}}
+      {{item.fileName}}
     </div>
     <div class="table-column">
-      {{item.size}}
+      {{item.fileSize}}
     </div>
     <div class="table-column">
-      {{item.date}}
+      {{item.dateTime}}
     </div>
   </div>
+
 </div>

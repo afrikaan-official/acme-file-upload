@@ -5,11 +5,20 @@
 </div>
 
 <!-- File Upload Send Request -->
-<div class="upload-type" *ngIf="fileType && fileMaxSize">
+<div class="upload-type" *ngIf="selectedFileType && maxFileSize">
   <input class="form-control" type="file" (change)="onChange($event)" multiple>
-  <button (click)="onUpload()" class="btn btn-success">
+  <button (click)="handleUpload()" class="btn btn-success">
     Upload
   </button>
+</div>
+
+<!--Error Messages -->
+<div class="row ml-4" *ngIf="errorMessages">
+  <span *ngFor="let errorMessage of errorMessages">
+    <div class="alert alert-danger" role="alert">
+      {{errorMessage}}
+    </div>
+  </span>
 </div>
 
 <!-- File Upload Loading -->
@@ -20,11 +29,7 @@
 <!-- File Upload Table -->
 <div class="upload-table">
   <div class="table-item">
-    <h4>Image</h4>
-    <app-upload-table></app-upload-table>
-  </div>
-  <div class="table-item">
-    <h4>PDF</h4>
-    <app-upload-table></app-upload-table>
+    <h4>Uploaded Image files:</h4>
+    <app-upload-table [tableItems]="tableItems"></app-upload-table>
   </div>
 </div>

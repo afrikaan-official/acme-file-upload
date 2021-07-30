@@ -1,3 +1,4 @@
+import { ThrowStmt } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import {FileUploadServiceService} from "../../services/file-upload-service.service";
 
@@ -8,11 +9,11 @@ import {FileUploadServiceService} from "../../services/file-upload-service.servi
 })
 
 export class FileUploadAreaComponent implements OnInit {
-  loading: boolean = false; // Flag variable
-  files: any = []; // Variable to store file
-  fileType: string = '';
-  fileMaxSize: number = 0;
-  imagesMimeTypes: Array<string> = [
+  loading: boolean = false; 
+  files: Array<File> = []; 
+  selectedFileType: string = '';
+  maxFileSize: number = 0;
+  imageMimeTypes: Array<string> = [
     'image/jpeg',
     'image/jpg',
     'image/png',
@@ -20,6 +21,7 @@ export class FileUploadAreaComponent implements OnInit {
   ];
   errorMessages: Array<String> = [];
   uploadedList: Array<any> = [];
+  tableItems: Array<Object>=[];
 
   constructor(private fileUploadService: FileUploadServiceService) { }
 
@@ -30,34 +32,42 @@ export class FileUploadAreaComponent implements OnInit {
     this.files = [...event.target.files];
   }
 
-  onUpload() {
+  handleUpload() {
     this.loading = true;
+    const fileSizeInBytes = this.maxFileSize * 1048576;
 
-    const sizeIbKb = this.fileMaxSize * 1048576;
     this.files.map((file: File) => {
-      if (this.imagesMimeTypes.includes(file.type)) {
-        if (sizeIbKb >= file.size) {
-          // this.uploadedList.push(file);
-          this.fileUploadService.upload(file).subscribe(
-            (event: any) => {
+      if (this.imageMimeTypes.includes(file.type)) {
+        if (fileSizeInBytes >= file.size) {
+           this.fileUploadService.upload(file).subscribe(
+            (result:any) => {
+              result.map((r:Object)=>{
+                this.tableItems.push(r);
+              })
+                            
             }
           );
         } else {
-          this.errorMessages.push(`${file.name} dosya boyutundan dolayı atılamadı.`);
+          this.errorMessages.push(`${file.name} is exceeds file size limit!`);
         }
       } else {
-        this.errorMessages.push(`${file.name} dosya tipten dolayı atılamadı.`);
+        this.errorMessages.push(`${file.name} is violates file type!`);
       }
     });
     this.loading = false;
   }
 
   fileTypeAdded(type: string) {
-    this.fileType = type;
+    this.selectedFileType = type;
+    this.hideMessages();
   }
 
   fileSizeAdded(size: number) {
-    this.fileMaxSize = size;
+    this.maxFileSize = size;
+  }
+
+  hideMessages(){
+    this.errorMessages=[];
   }
 
 }

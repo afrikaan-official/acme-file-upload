@@ -30,7 +30,7 @@ namespace AcmeFileUpload_API.Controllers
             }
 
             var savedFiles = results.Where(r => r.Item3)
-                .Select(n => new {fileName = n.Item1, fileSize = n.Item2, success = n.Item3});
+                .Select(n => new {fileName = n.Item1, fileSize = n.Item2, success = n.Item3,dateTime=n.Item4});
             
             return Ok(savedFiles);
         }
