@@ -8,20 +8,18 @@ AcmeFileUpload is a simple web application for uploading certain files
 ```
 .
 ├── AcmeFileUpload
-│   ├── AcmeFileUpload.API/
+│   ├── AcmeFileUpload-API/
 │   │   ├── appsettings.*.json
 │   │   ├── Controllers/
 │   │   ├── Program.cs
 │   │   ├── uploads/
 │   │   ├── ...
 |   |   └── Dockerfile
-│   ├── AcmeFileUpload.Web
-│   │   ├── appsettings.*.json
-│   │   ├── ClientApp/
-│   │   │    ├── src/ 
-│   │   │    │   ├── main.ts
-│   │   │    │   └── ...
-│   │   ├── appsettings.*.json
+│   ├── AcmeFileUpload-Web/
+│   │   ├── src/ 
+│   │   │    ├── main.ts
+│   │   │    ├── ...
+│   │   │    └── Dockerfile
 │   │   └── ...
 │   
 └── docker-compose.yaml
@@ -34,7 +32,7 @@ services:
   api:
     build:
       dockerfile: Dockerfile
-      context: AcmeFileUpload.API/.
+      context: AcmeFileUpload-API/.
     environment:
       ASPNETCORE_ENVIRONMENT: "Production"
     ports:
@@ -42,11 +40,9 @@ services:
   web:
     build:
       dockerfile: Dockerfile
-      context: AcmeFileUpload.Web/.
-    environment:
-      ASPNETCORE_ENVIRONMENT: "Production"
+      context: AcmeFileUpload-Web/.
     ports:
-      - 5000:5000
+      - 5000:80
 ```
 The compose file defines an application with two services `web` and `api`.
 When deploying the application, docker-compose maps the container port 5000 for `api` and port 5001 for `web`.

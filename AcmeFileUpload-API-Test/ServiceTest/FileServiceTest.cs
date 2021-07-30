@@ -18,7 +18,7 @@ namespace AcmeFileUpload_API_Test.ServiceTest
         }
 
         [Fact]
-        public  async void SaveFileAsync_Should_Not_Save_File_When_Empty_File_Was_Send()
+        public  async void SaveFileAsync_Should_Not_Save_File_When_Empty_File_Sent()
         {
             //Arrange
             var inMemorySettings = new Dictionary<string, string> {
