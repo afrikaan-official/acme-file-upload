@@ -1,0 +1,25 @@
+<div class="upload-tables">
+  <div class="table-row title">
+    <div class="table-column">
+      Title
+    </div>
+    <div class="table-column">
+      Title
+    </div>
+    <div class="table-column">
+      Title
+    </div>
+  </div>
+
+  <div class="table-row" *ngFor="let item of items">
+    <div class="table-column">
+      {{item.title}}
+    </div>
+    <div class="table-column">
+      {{item.size}}
+    </div>
+    <div class="table-column">
+      {{item.date}}
+    </div>
+  </div>
+</div>

@@ -21,7 +21,6 @@ namespace AcmeFileUpload_API.Controllers
         }
 
         [HttpPost]
-        [EnableCors]
         public async Task<IActionResult> UploadAsync(IFormCollection formCollection,CancellationToken cancellationToken=default)
         {
             var results = new List<Tuple<string, long, bool,string>>();

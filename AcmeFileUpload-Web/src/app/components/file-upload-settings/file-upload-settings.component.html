@@ -1,0 +1,20 @@
+<div class="fileupload-form">
+  <div class="upload-type">
+    <div class="form-check form-element">
+      <input class="form-check-input" type="radio" name="fileUploadSettings" id="image" value="image/*" (click)="handleClick($event)">
+      <label class="form-check-label" for="image">
+        Image
+      </label>
+    </div>
+    <div class="form-check form-element">
+      <input class="form-check-input" type="radio" name="fileUploadSettings" id="pdf" value="application/pdf" (click)="handleClick($event)">
+      <label class="form-check-label" for="pdf">
+        PDF
+      </label>
+    </div>
+  </div>
+  <div class="upload-max-size">
+    <label>Max File Size</label>
+    <input type="number" id="fileSize" name="fileSize" min="1" max="100" (change)="handleSize($event)">
+  </div>
+</div>

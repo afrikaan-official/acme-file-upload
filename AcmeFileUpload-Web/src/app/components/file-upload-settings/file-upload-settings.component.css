@@ -1,0 +1,31 @@
+.fileupload-form {
+  padding: 0 0 16px 0;
+}
+
+.upload-type {
+  display: flex;
+  align-items: center;
+  padding: 0 0 32px;
+}
+.upload-type .form-element {
+  margin: 0 16px 0 0;
+  font-weight: bold;
+}
+.upload-type .form-element:last-child {
+  margin: 0;
+}
+
+.upload-max-size {
+  display: flex;
+  flex-direction: column;
+}
+.upload-max-size label {
+  font-weight: bold;
+}
+.upload-max-size input {
+  font-weight: bold;
+  padding: 8px;
+  height: 36px;
+  border-radius: 8px;
+  max-width: 256px;
+}

@@ -1,0 +1,31 @@
+.fileupload-setting {
+  padding: 32px;
+}
+
+.upload-type {
+  padding: 0 32px 32px;
+  display: flex;
+  align-items: center;
+}
+.upload-type input {
+  font-weight: bold;
+  padding: 8px;
+  height: 46px;
+  border-radius: 8px;
+  max-width: 256px;
+}
+.upload-type button {
+  font-weight: bold;
+  padding: 8px;
+  height: 46px;
+  border-radius: 8px;
+  margin: 0 0 0 32px;
+  min-width: 128px;
+}
+
+.upload-table {
+  padding: 0 32px 32px;
+}
+.table-item {
+  margin: 0 0 16px;
+}
