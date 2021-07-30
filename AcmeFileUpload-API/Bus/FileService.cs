@@ -17,11 +17,11 @@ namespace AcmeFileUpload_API.Bus
             _configuration = configuration;
         }
         
-        public async Task<Tuple<string,long,bool>> SaveFileAsync(IFormFile formFile,CancellationToken cancellationToken=default)
+        public async Task<Tuple<string,long,bool,string>> SaveFileAsync(IFormFile formFile,CancellationToken cancellationToken=default)
         {
             if (cancellationToken.IsCancellationRequested)
             {
-                return new Tuple<string, long, bool>(string.Empty, 0, false);
+                return new Tuple<string, long, bool,string>(string.Empty, 0, false,string.Empty);
             }
             
             if (formFile.Length > 0)
@@ -34,10 +34,10 @@ namespace AcmeFileUpload_API.Bus
                     await formFile.CopyToAsync(stream);
                 }
 
-                return new Tuple<string, long, bool>(formFile.Name, formFile.Length, true);
+                return new Tuple<string, long, bool,string>(formFile.Name, formFile.Length, true,DateTime.Now.ToLongDateString());
             }
             
-            return new Tuple<string, long, bool>(string.Empty, 0, false);
+            return new Tuple<string, long, bool,string>(string.Empty, 0, false,string.Empty);
         }
     }
 }

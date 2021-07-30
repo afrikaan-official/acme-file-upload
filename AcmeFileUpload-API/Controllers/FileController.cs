@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -8,9 +7,8 @@ using AcmeFileUpload_API.Bus.Infra;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 
-namespace AcmeFileUpload.API.Controllers
+namespace AcmeFileUpload_API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -26,7 +24,7 @@ namespace AcmeFileUpload.API.Controllers
         [EnableCors]
         public async Task<IActionResult> UploadAsync(IFormCollection formCollection,CancellationToken cancellationToken=default)
         {
-            var results = new List<Tuple<string, long, bool>>();
+            var results = new List<Tuple<string, long, bool,string>>();
             foreach (var formFile in formCollection.Files)
             {
                 results.Add(await _fileService.SaveFileAsync(formFile, cancellationToken));
