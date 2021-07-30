@@ -1,0 +1,24 @@
+.upload-tables {
+    width: 100%;
+    max-width: 512px;
+    height: 80px;
+    overflow: auto;
+  }
+  .table-row {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+  }
+  .title {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .table-column {
+    display: flex;
+    align-items: center;
+    width: 33.3%;
+    min-height: 36px;
+    border: 1px solid #ccc;
+    padding: 8px;
+  }
+  

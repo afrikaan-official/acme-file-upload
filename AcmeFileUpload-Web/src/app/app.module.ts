@@ -2,18 +2,18 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from "@angular/forms";
-import { FileUploadAreaComponent } from "./components/file-upload-area/file-upload-area.component";
 import { FileUploadServiceService } from "./services/file-upload-service.service";
-import { FileUploadSettingsComponent } from './components/file-upload-settings/file-upload-settings.component';
 import { LoadingComponent } from './components/loading/loading.component';
-import { UploadTableComponent } from './components/upload-table/upload-table.component';
+import { ViewAreaComponent } from './components/view-area/view-area.component';
+import { UploadAreaComponent } from './components/upload-area/upload-area.component';
+import { UploadSettingsComponent } from './components/upload-settings/upload-settings.component';
 
 @NgModule({
   declarations: [
-    FileUploadAreaComponent,
-    FileUploadSettingsComponent,
+    UploadAreaComponent,
     LoadingComponent,
-    UploadTableComponent,
+    ViewAreaComponent,
+    UploadSettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -21,6 +21,6 @@ import { UploadTableComponent } from './components/upload-table/upload-table.com
     FormsModule
   ],
   providers: [FileUploadServiceService],
-  bootstrap: [FileUploadAreaComponent]
+  bootstrap: [UploadAreaComponent]
 })
 export class AppModule { }

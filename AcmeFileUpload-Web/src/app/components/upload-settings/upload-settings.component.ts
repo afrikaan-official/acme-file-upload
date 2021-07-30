@@ -1,15 +1,14 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter} from '@angular/core';
 
 @Component({
-  selector: 'app-file-upload-settings',
-  templateUrl: './file-upload-settings.component.html',
-  styleUrls: ['./file-upload-settings.component.css']
+  selector: 'app-upload-settings',
+  templateUrl: './upload-settings.component.html',
+  styleUrls: ['./upload-settings.component.css']
 })
-export class FileUploadSettingsComponent implements OnInit {
+export class UploadSettingsComponent implements OnInit {
   @Output() fileTypeEvent = new EventEmitter<string>();
   @Output() fileSizeEvent = new EventEmitter<number>();
-
-  constructor() {}
+  constructor() { }
 
   ngOnInit(): void {
   }

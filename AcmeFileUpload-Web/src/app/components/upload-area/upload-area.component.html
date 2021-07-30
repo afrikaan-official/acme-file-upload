@@ -1,7 +1,6 @@
 <!-- File Upload Settings -->
 <div class="fileupload-setting">
-  <app-file-upload-settings (fileTypeEvent)="fileTypeAdded($event)" (fileSizeEvent)="fileSizeAdded($event)">
-  </app-file-upload-settings>
+  <app-upload-settings (fileTypeEvent)="fileTypeAdded($event)" (fileSizeEvent)="fileSizeAdded($event)"></app-upload-settings>
 </div>
 
 <!-- File Upload Send Request -->
@@ -29,7 +28,7 @@
 <!-- File Upload Table -->
 <div class="upload-table">
   <div class="table-item">
-    <h4>Uploaded Image files:</h4>
-    <app-upload-table [tableItems]="tableItems"></app-upload-table>
+    <h4>Successfull uploaded files:</h4>
+    <app-view-area [tableItems]="tableItems"></app-view-area>
   </div>
 </div>

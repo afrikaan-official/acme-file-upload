@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UploadTableComponent } from './upload-table.component';
+import { UploadSettingsComponent } from './upload-settings.component';
 
-describe('UploadTableComponent', () => {
-  let component: UploadTableComponent;
-  let fixture: ComponentFixture<UploadTableComponent>;
+describe('UploadSettingsComponent', () => {
+  let component: UploadSettingsComponent;
+  let fixture: ComponentFixture<UploadSettingsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UploadTableComponent ]
+      declarations: [ UploadSettingsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UploadTableComponent);
+    fixture = TestBed.createComponent(UploadSettingsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

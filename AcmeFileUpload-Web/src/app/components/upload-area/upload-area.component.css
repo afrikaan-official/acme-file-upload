@@ -1,3 +1,8 @@
+.tbody{
+  overflow: auto;
+  height: 100px;
+}
+
 .fileupload-setting {
   padding: 32px;
 }
