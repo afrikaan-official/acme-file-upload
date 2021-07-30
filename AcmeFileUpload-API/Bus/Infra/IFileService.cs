@@ -1,9 +1,12 @@
+using System;
+using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 
-namespace AcmeFileUpload.API.Bus.Infra
+namespace AcmeFileUpload_API.Bus.Infra
 {
     public interface IFileService
     {
-        Task SaveFileAsync(string filePath);
+        Task<Tuple<string,long,bool>> SaveFileAsync(IFormFile formFile,CancellationToken cancellationToken=default);
     }
 }

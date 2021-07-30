@@ -1,11 +1,9 @@
-using AcmeFileUpload.API.Bus;
-using AcmeFileUpload.API.Bus.Infra;
+using AcmeFileUpload_API.Bus;
+using AcmeFileUpload_API.Bus.Infra;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 
 namespace AcmeFileUpload.API

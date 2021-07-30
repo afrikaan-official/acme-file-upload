@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeFileUpload-API", "AcmeFileUpload-API.csproj", "{BF8547E9-F6B0-4213-9223-FC19D9086522}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcmeFileUpload-API-Test", "..\AcmeFileUpload-API-Test\AcmeFileUpload-API-Test.csproj", "{8E922B3F-6EAB-4132-80BF-2B3ED313B0C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{BF8547E9-F6B0-4213-9223-FC19D9086522}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF8547E9-F6B0-4213-9223-FC19D9086522}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF8547E9-F6B0-4213-9223-FC19D9086522}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E922B3F-6EAB-4132-80BF-2B3ED313B0C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E922B3F-6EAB-4132-80BF-2B3ED313B0C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E922B3F-6EAB-4132-80BF-2B3ED313B0C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E922B3F-6EAB-4132-80BF-2B3ED313B0C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
